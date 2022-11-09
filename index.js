@@ -40,3 +40,22 @@ function destroyer(arr) {
 destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 
 
+// wherefore-art-thou
+function whatIsInAName(collection, source) {
+
+  // Only change code below this line
+const arr = collection.filter(item => {
+  for(let i in source){
+    if (source[i] != item[i]){
+      return false
+    }
+  }
+  return true
+})
+  // Only change code above this line
+  return arr;
+}
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+
+
