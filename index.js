@@ -24,3 +24,19 @@ function sumAll(arr) {
   }
   
   diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+
+  // Seek and Destroy
+function destroyer(arr) {
+  const argument = Array.from(arguments);
+  
+  const answer = argument.shift().filter(function (value) {
+    if (argument.indexOf(value) < 0) {
+      return true;
+    }
+  });   
+  return answer;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+
+
