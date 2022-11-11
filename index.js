@@ -99,3 +99,18 @@ var lengthOfLongestSubstring = function(s) {
   }
   return max
 };
+
+// find the duplicate number LeetCode
+var findDuplicate = function(nums) {
+  var result = [];
+  for(var i = 0; i < nums.length; i++){
+      var value =  Math.abs(nums[i]);
+      var index = value - 1;
+      if(nums[index] < 0){
+          result.push(value)
+      }else{
+          nums[index] *= -1;
+      }
+  }
+  return result;
+};
