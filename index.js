@@ -59,3 +59,26 @@ const arr = collection.filter(item => {
 whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
 
 
+// LeetCode Two Sum
+var twoSum = function(nums, target) {
+  for(let i = 0; i < nums.length; i++ ){
+      for(let j = i + 1; j < nums.length; j++){
+          if (nums[i] + nums[j] === target ){
+              return [i, j]
+          }
+      }
+  }
+};
+// using hashmap
+var twoSum = function(nums, target) {
+  var map = {};
+  for(var i = 0; i < nums.length; i++ ){
+    var value = nums[i];
+    var complementPair = target - value;
+    if(map[complementPair] !== undefined) {
+        return [map[complementPair], i];
+    } else{
+        map[value] = i;
+    }
+  }
+};
